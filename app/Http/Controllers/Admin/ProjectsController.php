@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Project;
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Http\Controllers\Auth;
-use App\Models\Role;
 
-class UsersController extends Controller
+
+class ProjectsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +17,10 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $projects = Project::all();
         //$users = User::paginate(5);
-        return view('admin.list-users', compact('users'));        
+        return view('admin.list-projects', compact('projects'));        
+  
     }
 
     /**
@@ -60,47 +61,10 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
-    /*/ public function edit($id)
-    {
-        $user = User::user();
-        return view('admin.users.edit', compact('user'));
-    }*/
-
-
-
     public function edit($id)
     {
-        $roles = Role::all();
-        $user = User::find($id);
-    
-        //return view('admin.users.edit', compact('user')); 
-        // return "Hola" . $id . " ". $user;
-        //return View::('viewname')->with(compact('user', 'action'));
-        return view('admin.users.edit', compact('user', 'roles'));
+        //
     }
-
-
-
-    /*
-    public function edit(User $user) // Role $roles
-    {
-       // $roles = Role::all();
-       // $user = User::all();
-       // return view('admin.users.edit', compact('user', 'roles'));
-    
-        $user = User::findOrFail($user);
-        //$user = User::find($user);
-        //$users = User::paginate(5);
-        return view('admin.users.edit', compact('user')); 
-    }*/
-
-    /*
-    public function edit(User $user)
-    {   
-        $user = Auth::user();
-        return view('users.edit', compact('user'));
-    }*/
 
     /**
      * Update the specified resource in storage.
@@ -109,10 +73,9 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
-    {       
-        $user->roles()->sync($request->roles);
-        return redirect()->route('users.edit',$user)->with('success', __("Asignando roles"));
+    public function update(Request $request, $id)
+    {
+        //
     }
 
     /**

@@ -1,3 +1,8 @@
+
+@extends('admin.index')
+
+
+@section('title', 'Admin')
 <tbody>
     @forelse ($users as $user)
         
@@ -23,3 +28,4 @@
     @endforelse
 
 </tbody>
+@endsection

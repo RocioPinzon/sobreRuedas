@@ -248,7 +248,7 @@ return [
         ['header' => 'account_settings'],
         [
             'text' => 'Listar proyectos',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/list-projects',
             'icon' => 'fas fa-fw fa-user',
             'icon_color' => 'cyan',
 
