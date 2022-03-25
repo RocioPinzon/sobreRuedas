@@ -5,10 +5,16 @@ namespace App\Http\Controllers;
 use App\Mail\ContactaMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Traits\HasRoles;
 
 class ContactaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware("auth");
+    }
+
     public function index(){
         return view('contacta.index');
 

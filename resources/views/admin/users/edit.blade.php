@@ -7,7 +7,7 @@
     </div>
     @endif
 
-    <div class="card">
+    <div class="card"> 
         <div class="card-body">
             <label class="form-label">Nombre</label>
             <p class="form-control">{{ $user->name }}</p>
@@ -27,7 +27,7 @@
             </div>
         @endforeach
 
-                {!! Form::submit('Asignar rol', ['class'=>'btn btn-primary mt-2']) !!}
+                {!! Form::submit('Asignar rol', ['class'=>'btn btn-success mt-2']) !!}
                 {!! Form::close() !!}
 
             </div>

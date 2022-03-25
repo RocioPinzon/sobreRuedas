@@ -1,9 +1,9 @@
 
-<form class="w-full max-w-lg border-4 " method="POST" action="{{ route('contacta.store') }}">
+<form class="w-full max-w-lg  border-2 " method="POST" action="{{ route('contacta.store') }}">
     @csrf
-     <h1 class="font-semibold py-5 text-blue mb-10 bg-blue-900 text-white px-5"> Formulario </h1>
+     <h1 class="t-semibold text-blue mb-5 bg-yellow-500 text-white p-5"> Formulario </h1>
     
-    <div class="flex flex-wrap -mt-10">
+    <div class="flex flex-wrap mb-6">
         <div class="w-full px-5">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold my-5" for="name">
                 {{ __("Nombre") }}
@@ -17,7 +17,7 @@
             @enderror
         </div>
     </div>
-    <div class="flex flex-wrap mt-3 ">
+    <div class="flex flex-wrap mb-6">
         <div class="w-full px-5">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold my-5" for="email">
                 {{ __("Email") }}
@@ -48,7 +48,7 @@
             @enderror
         </div>
     </div>
-    <div class="md:flex md:items-center">
+    <div class="md:flex md:items-center p-5">
         <div class="md:w-1/3">
             <button class="shadow bg-teal-400 mt-5 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
                 {{ 'Enviar mensaje' }}

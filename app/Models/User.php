@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
 
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
@@ -58,7 +59,8 @@ class User extends Authenticatable
     }
     public function getRouteKeyName()
     {
-        return 'name'; // db column name you would like to appear in the url.
+        //return 'name'; // db column name you would like to appear in the url.
+        return 'id';
     }
     public function adminlte_image()
     {
@@ -70,7 +72,7 @@ class User extends Authenticatable
     }
 
     public function adminlte_profile_url(){
-        return "profile/username";
+        return "profile/{id}";
     }
 }
 

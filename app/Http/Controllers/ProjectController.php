@@ -40,8 +40,8 @@ class ProjectController extends Controller
     public function create()
     {
         $project = new Project();
-        $title = __("Crear proyecto");
-        $textButton = __("Crear");
+        $title = __("Publicar vídeo");
+        $textButton = __("Publicar");
         $route = route("projects.store");
         return view("projects.create", compact("title", "textButton", "route", "project"));
     }
@@ -94,7 +94,7 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $update = true;
-        $title = __("Editar proyecto");
+        $title = __("Editar video");
         $textButton = __("Actualizar");
         $route = route("projects.update", ["project" => $project]);
         return view("projects.edit", compact("update", "title", "textButton", "route", "project"));
@@ -113,7 +113,7 @@ class ProjectController extends Controller
     {
         $this->validate($request, [
             "name" => "required|unique:projects,name," . $project->id,
-            "description" => "nullable|string|min:10"
+            "description" => "nullable|string|min:9|max:15"
         ]);
         
         $project->fill($request->only("name", "description"))->save();

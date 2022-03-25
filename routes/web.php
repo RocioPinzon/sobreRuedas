@@ -6,6 +6,7 @@ use App\Http\Controllers\ProjectController;
 use App\Mail\ContactaMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\SliderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,8 @@ Route::resource("projects", ProjectController::class);
 
 Route::get('contacta',[ContactaController::class,'index'])->name('contacta.index');
 Route::post('contacta',[ContactaController::class,'store'])->name('contacta.store');
-
+ 
+//Route::get('slider', [SliderController::class, 'index']);
 ?>
+
 

@@ -4,7 +4,7 @@
 @section('title', 'Admin')
 
 @section('content_header')
-    <h1>Panel administrador</h1>
+    <h1>Panel administrador de {{ Auth::user()->name }}</h1>
 @stop
 
 @section('content')

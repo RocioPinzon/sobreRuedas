@@ -45,12 +45,12 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Sobre ruedas</b>',
     'logo_img' => 'vendor/adminlte/dist/img/logo-roller.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Admin',
+    'logo_img_alt' => 'Sobre ruedas',
 
     /*
     |--------------------------------------------------------------------------
@@ -66,10 +66,10 @@ return [
 
     'usermenu_enabled' => true,
     'usermenu_header' => true,
-    'usermenu_header_class' => 'bg-primary',
+    'usermenu_header_class' => 'bg-success',
     'usermenu_image' => true,
     'usermenu_desc' => true,
-    'usermenu_profile_url' => true,
+    'usermenu_profile_url' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -235,19 +235,23 @@ return [
         
 
         // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
+        
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
         
-        ['header' => 'account_settings'],
+        ['header' => 'LISTADOS'],
         [
-            'text' => 'Listar proyectos',
+            'text' => 'INICIO',
+            'url'  => 'http://sobreruedas.test/',
+            'icon' => 'far fa-fw fa-circle',
+            'icon_color' => 'green',
+
+        ],
+        [
+            'text' => 'Listar videos',
             'url'  => 'admin/list-projects',
             'icon' => 'fas fa-fw fa-user',
             'icon_color' => 'cyan',
@@ -259,7 +263,18 @@ return [
             'icon' => 'fas fa-fw fa-lock',
             'icon_color' => 'cyan',
 
+        ],
+
+        [
+            'text' => 'Listar permisos',
+            'url'  => 'admin/list-permisos',
+            'icon' => 'fas fa-fw fa-lock',
+            'icon_color' => 'cyan',
+
         ]
+
+        
+        
         
     ],
 

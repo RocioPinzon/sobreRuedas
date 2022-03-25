@@ -18,9 +18,10 @@ class ProjectsController extends Controller
     public function index()
     {
         $projects = Project::all();
+        //$usuario = User::find(1);
         //$users = User::paginate(5);
         return view('admin.list-projects', compact('projects'));        
-  
+        
     }
 
     /**

@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->seedUsers();
         \App\Models\User::factory(10)->create();
-        \App\Models\Project::factory(10)->create();
+        //\App\Models\Project::factory(10)->create();
         $this->seedRandomRelationRolesUser();
        
     }
@@ -35,7 +35,6 @@ class DatabaseSeeder extends Seeder
     {
         $roles = [
             "admin"=>"administrador",
-            "developer"=>"desarrollador",
             "guest"=>"invitado"
         ];
 

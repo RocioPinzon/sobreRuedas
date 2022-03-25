@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Controllers\Auth;
 use App\Models\Role;
+use Spatie\Permission\Models\Permission;
+
 
 class UsersController extends Controller
 {
@@ -19,6 +21,9 @@ class UsersController extends Controller
     {
         $users = User::all();
         //$users = User::paginate(5);
+        
+
+    //$permisos = Permission::all();
         return view('admin.list-users', compact('users'));        
     }
 
@@ -109,10 +114,13 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
-    {       
-        $user->roles()->sync($request->roles);
-        return redirect()->route('users.edit',$user)->with('success', __("Asignando roles"));
+    public function update(Request $request, User $id)
+    {            
+        $id->roles()->sync($request->roles);
+
+        //return "Hola" . " ". $id;
+
+        return redirect()->route('users.edit',$id)->with('success', __("Asignando roles"));
     }
 
     /**
