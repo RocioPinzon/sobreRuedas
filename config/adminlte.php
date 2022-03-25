@@ -242,25 +242,26 @@ return [
             'can'  => 'manage-blog',
         ],
         
-        ['header' => 'LISTADOS'],
+        
         [
-            'text' => 'INICIO',
+            'text' => 'PORTAL INICIO',
             'url'  => 'http://sobreruedas.test/',
             'icon' => 'far fa-fw fa-circle',
             'icon_color' => 'green',
 
         ],
+        ['header' => 'LISTADOS'],
         [
             'text' => 'Listar videos',
             'url'  => 'admin/list-projects',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'far fa-fw fa fa-play',
             'icon_color' => 'cyan',
 
         ],
         [
             'text' => 'Listar usuarios',
             'url'  => 'admin/list-users',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fas fa-fw fa-user',
             'icon_color' => 'cyan',
 
         ],

@@ -48,7 +48,7 @@
                             </td>
                         <td class="border px-4 py-2">{{ date_format($project->created_at, "d/m/Y") }}</td>
                         <td class="border px-4 py-2">
-                            <a href="{{ route('projects.edit', ['project' => $project]) }}"><span class="p-5 bg-orange-500">{{ __("Editar") }}</span></a> |
+                            <a href="{{ route('projects.edit', ['project' => $project]) }}" class="text-white font-bold py-2 px-3 bg-green-400 border-green-700 hover:bg-green-700 rounded" >{{ __("Editar") }}</a> |
 
                             <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded"  onclick="event.preventDefault(); document.getElementById('delete-project-{{ $project->id }}-form').submit();">{{ __("Eliminar") }}</button>
                             <form id="delete-project-{{ $project->id }}-form" action="{{ route('projects.destroy', ['project' => $project]) }}" method="POST" class="hidden">

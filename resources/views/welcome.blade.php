@@ -63,8 +63,10 @@
        
     <div class="containerPortada">
         <h1>Sobre Ruedas</h1>
-        <h2>Los mejores vídeos de patinaje</h2>
-        <p>Praesent vel ipsum euismod, tincidunt enim quis, maximus ex. Curabitur semper nisl quis eros ullamcorper pharetra. In nulla ligula, tincidunt in posuere eu, pellentesque id sapien. Pellentesque dui libero, placerat mollis ante in, faucibus auctor turpis. Proin ligula orci, volutpat non neque quis, elementum lobortis justo. Etiam non magna velit. Curabitur in dictum ligula, id vulputate orci. Vivamus ante urna, euismod eget mattis vitae, placerat et libero. Aenean ultrices, turpis sit amet mollis congue, nibh tortor condimentum ex, non convallis ipsum tellus quis ex. Donec congue purus ac nisl cursus, in condimentum nulla elementum. In eu diam magna. Proin pharetra ipsum purus.</p>
+        <h2 class=pb-4>Los mejores vídeos de patinaje</h2>
+        <p>Publica lo que más te apasiona. Comparte y encuentra vídeos increíbles en esta comunidad roller.</p>
+        <p>Forma parte del mundo de los patines, hay un tipo para ti. Desde cuatro ruedas, patines de velocidad, agressive y mucho más. </p>
+  
     </div>
 
  

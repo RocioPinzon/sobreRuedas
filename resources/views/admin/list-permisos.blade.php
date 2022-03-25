@@ -1,7 +1,13 @@
 @extends('admin.index')
 
 @section("content")
- 
+<nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="http://sobreruedas.test/admin">Inicio</a></li>
+            <li class="breadcrumb-item"><a href="http://sobreruedas.test/admin/list-permisos">Listar permisos</a></li>
+        </ol>
+    </nav>
+
     <h1 class="text-center text-success p-5">{{ __("Listado de permisos") }}</h1>
         <!--<a href="{{ route("projects.create") }}" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
             {{ __("Crear proyecto") }}
