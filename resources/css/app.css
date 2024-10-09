@@ -3,3 +3,8 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+.containerVideo{
+    
+    width: 800px;
+}

@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="css/app.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet" type="text/css">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 
@@ -58,9 +58,14 @@
 
     <main class="grid-flow-col">
 
-    @php( $projects = \App\Models\Project::paginate(3) ) 
+    @php( $projects = \App\Models\Project::paginate(6)) 
     
-       
+    <div class="containerVideo">
+        <video class="z-index-1 aspect-[video] " playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source class="min-h-full"src="images/roller-video-inicio.mp4" type="video/mp4">
+        </video>
+    </div>
+    
     <div class="containerPortada">
         <h1>Sobre Ruedas</h1>
         <h2 class=pb-4>Los mejores vídeos de patinaje</h2>
@@ -69,14 +74,6 @@
   
     </div>
 
- 
-
-
-    <div class="containerPortada">
-        <video class="z-index-1 " playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source class="min-h-full"src="images/roller-video-inicio.mp4" type="video/mp4">
-        </video>
-    </div>
 
     <div class="containerPortada">
         <div class="py-4 ">
@@ -84,22 +81,50 @@
         
         </div> 
     
-        <div class="grid grid-cols-3 p-5 mx-5">
-      
-              
-                @forelse($projects as $project)
-                <div class="p-4">
-                    <iframe width="100%" height="515" src="https://www.youtube.com/embed/{{ $project->description }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="grid grid-cols-3 p-5 mx-5 justify-items-stretch gap-4">
+                
+            @forelse($projects as $project)
+            <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
+                <a href="#">
+                    <iframe class="h-80 rounded-t-lg" width="100%" height="515" src="https://www.youtube.com/embed/{{ $project->description }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </a>
+                <div class="p-5 grid grid-rows gap-6">
+                    
+                    <div>
+                        <a href="#">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $project->name }}</h5>
+
+                        </a>
+                        <span class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-400 border border-gray-500 ">Agresivos</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-400 border border-gray-500 ">Inline</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-400 border border-gray-500 ">Sktepark</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-2">
+                        <p>Subido por 
+                            <span class="rounded-full bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 me-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500 ">
+                            
+                                {{ $project->user->name }}
+                            </span>
+                        </p>
+                        <p>Fecha 
+                            <span class="rounded-full bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 me-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500 ">
+                            
+                                {{ $project->user->created_at}}
+                            </span>
+                        </p>
+                    </div>
                 </div>
-          
-                @empty
+            </div>
+            @empty
                     <div class="col-span-3 text-center border border-green-600 text-green-500 px-4 py-3 rounded relative" role="info">
                           <span class="font-bold "><h3 class="normal-case text-green-500">{{ __("Ops... Aún no hay vídeos publicados") }}</h3></span>
                           <span class="block sm:inline">{{ __("Se el primero en publicar un vídeo.") }}</span>
                           <p><a href="{{ route('login') }}" class="text-yellow-600">Entra</a> o <a href="{{ route('register') }}" class="text-yellow-600">regístrate</a>, y empieza a publicar vídeos</p>
                           <span class="block sm:inline">{{ __("") }}</span>
                     </div>
-                @endforelse
+            @endforelse
+            
       </div>
     </div>
 

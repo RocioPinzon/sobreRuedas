@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Project;
 use Illuminate\Support\Facades\Auth;
-use Spatie\Permission\Models\Role;
-use Spatie\Permission\Traits\HasRoles;
+
 
 class ProjectController extends Controller
 {
@@ -28,7 +27,9 @@ class ProjectController extends Controller
             $projects= Project::with("user")->paginate(10);
         }else{
             $projects= Auth::user()->projects()->paginate(10);
+           
         }
+    
         return view("projects.index", compact("projects"));
     }
 
