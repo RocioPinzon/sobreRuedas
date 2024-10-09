@@ -56,16 +56,16 @@
     
     <!-- MAIN -->
 
-    <main class="grid-flow-col">
+    <main class="grid justify-items-center">
 
     @php( $projects = \App\Models\Project::paginate(6)) 
     
-    <div class="containerVideo">
-        <video class="z-index-1 aspect-[video] " playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source class="min-h-full"src="images/roller-video-inicio.mp4" type="video/mp4">
+    <div class="grid justify-center w-2/3 p-4">
+        <video class="aspect-video rounded-xl" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="images/roller-video-inicio.mp4" type="video/mp4">
         </video>
     </div>
-    
+   
     <div class="containerPortada">
         <h1>Sobre Ruedas</h1>
         <h2 class=pb-4>Los mejores vídeos de patinaje</h2>
@@ -95,24 +95,19 @@
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $project->name }}</h5>
 
                         </a>
-                        <span class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-400 border border-gray-500 ">Agresivos</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-400 border border-gray-500 ">Inline</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-400 border border-gray-500 ">Sktepark</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-indigo-400 border border-indigo-400 ">Agresivos</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-indigo-400 border border-indigo-400 ">Inline</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-indigo-400 border border-indigo-400 ">Sktepark</span>
                     </div>
                     
                     <div class="grid grid-cols-2">
                         <p>Subido por 
-                            <span class="rounded-full bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 me-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500 ">
+                            <span class="italic">
                             
-                                {{ $project->user->name }}
+                                {{ $project->user->name }}, {{ $project->user->created_at->isoFormat('dddd H:mm')}}
                             </span>
                         </p>
-                        <p>Fecha 
-                            <span class="rounded-full bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 me-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500 ">
-                            
-                                {{ $project->user->created_at}}
-                            </span>
-                        </p>
+                        
                     </div>
                 </div>
             </div>
